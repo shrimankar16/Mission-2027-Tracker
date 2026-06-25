@@ -1,0 +1,48 @@
+# Database files
+*.db
+*.sqlite
+*.db-shm
+*.db-wal
+
+# Backup directory
+backups/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Streamlit (but keep config.toml)
+.streamlit/*
+!.streamlit/config.toml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

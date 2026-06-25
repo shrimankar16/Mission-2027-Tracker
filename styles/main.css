@@ -1,0 +1,265 @@
+/* Career Command Center - Custom CSS */
+/* Dark theme with professional color palette */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-base: #0D0F12;
+    --bg-surface: #161A20;
+    --bg-elevated: #1E2430;
+    --border: #2A3040;
+    --text-primary: #E8EAF0;
+    --text-secondary: #8A93A8;
+    --text-muted: #4A5568;
+    --accent-gold: #C9A84C;
+    --accent-sage: #6B8F71;
+    --accent-slate: #5B7FA6;
+    --danger: #A0522D;
+    --phase-1: #8B7355;
+    --phase-2: #5B7FA6;
+    --phase-3: #6B8F71;
+}
+
+/* Global Styles */
+.stApp {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Stat Cards */
+.stat-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.stat-card h3 {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.stat-card .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Checklist Items */
+.checklist-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.checklist-item:hover {
+    background-color: var(--bg-elevated);
+    border-color: var(--accent-slate);
+}
+
+.checklist-item.completed {
+    border-color: var(--accent-sage);
+    opacity: 0.7;
+}
+
+.checklist-item.overdue {
+    border-color: var(--danger);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.badge-learn {
+    background-color: var(--accent-gold);
+    color: var(--bg-base);
+}
+
+.badge-practice {
+    background-color: var(--accent-slate);
+    color: var(--text-primary);
+}
+
+.badge-revise {
+    background-color: var(--accent-sage);
+    color: var(--text-primary);
+}
+
+.badge-current-affairs {
+    background-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: var(--accent-gold);
+    color: var(--bg-base);
+    border: none;
+    border-radius: 3px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.stButton>button:hover {
+    background-color: #D4B556;
+    transform: translateY(-1px);
+}
+
+.stButton>button.secondary {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+/* Progress Bars */
+.stProgress > div > div {
+    background-color: var(--accent-sage);
+    height: 6px;
+}
+
+.stProgress > div {
+    background-color: var(--bg-elevated);
+}
+
+/* Sidebar */
+.css-1d391kg {
+    background-color: var(--bg-surface);
+}
+
+/* Phase Pulse Indicator */
+.phase-pulse {
+    background-color: var(--bg-elevated);
+    border-left: 4px solid var(--accent-gold);
+    padding: 24px 16px;
+    margin-bottom: 24px;
+}
+
+.phase-pulse .current-phase {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.phase-pulse .days-remaining {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: var(--bg-elevated);
+    color: var(--text-secondary);
+    border-radius: 3px;
+    font-size: 10px;
+    margin-right: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Tables */
+.dataframe {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.dataframe th {
+    background-color: var(--bg-elevated);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Monospace text (day counters, code) */
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+}
+
+/* Cards */
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.card-elevated {
+    background-color: var(--bg-elevated);
+}
+
+/* Dividers */
+hr {
+    border-color: var(--border);
+    margin: 32px 0;
+}
+
+/* Input fields */
+.stTextInput>div>div>input {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+.stTextInput>div>div>input:focus {
+    border-color: var(--accent-gold);
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.streamlit-expanderContent {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-top: none;
+}
