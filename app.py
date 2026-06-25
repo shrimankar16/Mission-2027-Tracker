@@ -77,7 +77,7 @@ def onboarding_screen():
         
         st.markdown("<br>", unsafe_allow_html=True)
         
-        if st.button("🚀 Start Journey", use_container_width=True):
+        if st.button("🚀 Start Journey", width="stretch"):
             if name.strip():
                 with st.spinner("Setting up your roadmap..."):
                     # Seed database

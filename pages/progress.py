@@ -51,7 +51,7 @@ def show():
             yaxis=dict(showgrid=True, gridcolor='#2A3040')
         )
         
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         
         # Readiness scores summary
         st.markdown("### Readiness Scores")

@@ -171,11 +171,11 @@ def show():
         ))
         fig.update_layout(
             height=200,
-            margin=dict(l=20, r=20, t=40, b=20),
+            margin=dict(l=20, r=20, t=50, b=20),
             paper_bgcolor="#0D0F12",
             font=dict(color="#E8EAF0", family="Inter")
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         
         # SSC gauge
         fig2 = go.Figure(go.Indicator(
@@ -186,17 +186,17 @@ def show():
                 'axis': {'range': [0, 100]},
                 'bar': {'color': "#6B8F71"},
                 'bgcolor': "#161A20",
-                'borderwidth': 2,
+                'borderwidth': 3,
                 'bordercolor': "#2A3040"
             }
         ))
         fig2.update_layout(
             height=200,
-            margin=dict(l=20, r=20, t=40, b=20),
+            margin=dict(l=20, r=20, t=50, b=20),
             paper_bgcolor="#0D0F12",
             font=dict(color="#E8EAF0", family="Inter")
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width="stretch")
         
         # MPSC gauge
         fig3 = go.Figure(go.Indicator(
@@ -213,11 +213,11 @@ def show():
         ))
         fig3.update_layout(
             height=200,
-            margin=dict(l=20, r=20, t=40, b=20),
+            margin=dict(l=20, r=20, t=50, b=20),
             paper_bgcolor="#0D0F12",
             font=dict(color="#E8EAF0", family="Inter")
         )
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width="stretch")
     
     analytics.close()
     
