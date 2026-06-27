@@ -161,8 +161,9 @@ def main_app():
 if __name__ == "__main__":
     init_session_state()
     
-    # Check if database is empty
-    if is_database_empty() and not st.session_state.initialized:
+    # Always check database state, not just session state
+    # If user exists in DB, go straight to main app
+    if is_database_empty():
         onboarding_screen()
     else:
         main_app()

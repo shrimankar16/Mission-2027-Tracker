@@ -11,14 +11,52 @@ def show():
     """Render checklist page"""
     st.title("📋 Unified Checklist")
     
+    # Add calendar date picker at the top
+    col1, col2, col3 = st.columns([2, 1, 1])
+    with col1:
+        selected_date = st.date_input(
+            "📅 Jump to date:",
+            value=date.today(),
+            min_value=date(2026, 6, 26),
+            max_value=date(2027, 12, 31),
+            help="Select any date to view its checklist"
+        )
+    
+    with col2:
+        if st.button("Today", width="stretch"):
+            selected_date = date.today()
+            st.rerun()
+    
+    with col3:
+        # Show if selected date is in the past/future
+        days_diff = (selected_date - date.today()).days
+        if days_diff < 0:
+            st.caption(f"⏪ {abs(days_diff)} days ago")
+        elif days_diff > 0:
+            st.caption(f"⏩ {days_diff} days ahead")
+        else:
+            st.caption("📍 Today")
+    
+    st.markdown("---")
+    
     # View mode tabs
-    tab1, tab2, tab3, tab4 = st.tabs(["Today", "This Week", "Date Range", "Overdue"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Selected Date", "This Week", "Date Range", "Overdue"])
     
     checklist_engine = ChecklistEngine()
     
     with tab1:
-        st.markdown("### Today's Tasks")
-        render_checklist_items(checklist_engine.get_today_checklist(), checklist_engine)
+        # Show checklist for selected date
+        date_label = "Today" if selected_date == date.today() else selected_date.strftime("%A, %B %d, %Y")
+        st.markdown(f"### 📅 {date_label}")
+        
+        items = checklist_engine.get_checklist_for_date(selected_date)
+        if not items:
+            if selected_date > date.today():
+                st.info("📅 No tasks scheduled for this future date yet.")
+            else:
+                st.success("✅ No tasks for this date!")
+        else:
+            render_checklist_items(items, checklist_engine)
     
     with tab2:
         st.markdown("### This Week")
